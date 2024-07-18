@@ -32,3 +32,5 @@ C:\Users\aliendro\Desktop\Cursos\Net\dotnet\obj\Debug\net7.0\refint\dotnet.dll
 C:\Users\aliendro\Desktop\Cursos\Net\dotnet\obj\Debug\net7.0\dotnet.pdb
 C:\Users\aliendro\Desktop\Cursos\Net\dotnet\obj\Debug\net7.0\dotnet.genruntimeconfig.cache
 C:\Users\aliendro\Desktop\Cursos\Net\dotnet\obj\Debug\net7.0\ref\dotnet.dll
+C:\Users\aliendro\Desktop\Cursos\Net\dotnet\bin\Debug\net7.0\AutoMapper.dll
+C:\Users\aliendro\Desktop\Cursos\Net\dotnet\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
