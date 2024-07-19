@@ -1,11 +1,14 @@
 global using dotnet.Models;
 global using dotnet.Services.CharacterService;
 global using dotnet.Dtos.Character;
+global using Microsoft.EntityFrameworkCore;
+global using dotnet.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+    builder.Services.AddDbContext<DataContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
