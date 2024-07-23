@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using dotnet.Data;
@@ -11,9 +12,11 @@ using dotnet.Data;
 namespace dotnet.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20240722215133_SkillSeeding")]
+    partial class SkillSeeding
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -33,13 +36,7 @@ namespace dotnet.Migrations
                     b.Property<int>("Class")
                         .HasColumnType("integer");
 
-                    b.Property<int>("Defeats")
-                        .HasColumnType("integer");
-
                     b.Property<int>("Defense")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("Fights")
                         .HasColumnType("integer");
 
                     b.Property<int>("HitPoints")
@@ -56,9 +53,6 @@ namespace dotnet.Migrations
                         .HasColumnType("integer");
 
                     b.Property<int?>("UserId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("Victories")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");

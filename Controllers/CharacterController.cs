@@ -10,7 +10,7 @@ using Microsoft.Extensions.Logging;
 namespace dotnet.Controllers
 {
     [Authorize]
-   [ApiController]
+    [ApiController]
     [Route("api/[controller]")]
     public class CharacterController : ControllerBase
     {
@@ -29,7 +29,8 @@ namespace dotnet.Controllers
         public async Task<ActionResult<ServiceResponse<GetCharacterDto>>> UpdateCharacter(UpdateCharacterDto character)
         {
             var response = await _characterService.UpdateCharacter(character);
-            if(response.Data is null){
+            if (response.Data is null)
+            {
                 return NotFound(response);
             }
             return Ok(response);
@@ -47,13 +48,22 @@ namespace dotnet.Controllers
             return Ok(await _characterService.GetCharacterById(id));
         }
 
-[HttpDelete("{id}")]
+        [HttpDelete("{id}")]
         public async Task<ActionResult<ServiceResponse<GetCharacterDto>>> DeleteCharacter(int id)
         {
-  var response = await _characterService.DeleteCharacter(id);
-            if(response.Data is null){
+            var response = await _characterService.DeleteCharacter(id);
+            if (response.Data is null)
+            {
                 return NotFound(response);
             }
-            return Ok(response);        }
+            return Ok(response);
+        }
+
+        [HttpPost("Skill")]
+        public async Task<ActionResult<ServiceResponse<GetCharacterDto>>> AddCharacterSkill(
+      AddCharacterSkillDto newCharacterSkill)
+        {
+            return Ok(await _characterService.AddCharacterSkill(newCharacterSkill));
+        }
     }
 }
